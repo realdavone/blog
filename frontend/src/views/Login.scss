@@ -1,0 +1,40 @@
+main.login{
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  gap:1rem;
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+    width:300px;
+    background-color:white;
+    padding:1rem;
+    border-radius:0.5rem;
+    input{
+      border-radius:0.5rem;
+      padding:0.75rem;
+      background-color:whitesmoke;
+      font-size:1.15rem;
+      &:focus{
+        outline:1px solid var(--theme-color)
+      }
+    }
+    button{
+      color:white;
+      padding:0.5rem 0;
+      font-size:1.25rem;
+      font-weight:700;
+      border-radius:0.5rem;
+      background-color:var(--theme-color);
+      opacity:0.75;
+      &:hover, &:focus{
+        opacity:1;
+      }
+    }
+  }
+  span.login-error{
+    color:crimson;
+    align-self:center;
+  }
+}

@@ -1,0 +1,43 @@
+:root{
+  --header-height:55px;
+  --nav-height:44px;
+  --theme-color:#df6c00;
+  --theme-color-alpha:#df6c0040;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body{
+  background-color:aliceblue;
+}
+button{
+  cursor:pointer;
+  background:transparent;
+  border:none;
+  color:inherit;
+  font-family:inherit;
+}
+main.content{
+  min-height:calc(100vh - var(--header-height) - var(--nav-height) - 5*1rem);
+  margin-top:1rem;
+  margin-bottom:1rem;
+}
+.container{
+  margin:0 auto;
+  max-width:1000px;
+  width:100%;
+  padding-right:1rem;
+  padding-left:1rem;
+}
+a{
+  color:inherit;
+  text-decoration:none;
+}
+input, textarea{
+  border:none;
+  outline:none;
+  background:none;
+}

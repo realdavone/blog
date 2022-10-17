@@ -1,0 +1,47 @@
+section.new-post{
+  background-color:white;
+  padding:1rem;
+  border-radius:0.5rem;
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    margin-top:1rem;
+    input, select, textarea{
+      border-radius:0.5rem;
+      padding:0.75rem;
+      background-color:whitesmoke;
+      font-size:1.15rem;
+      &:focus{
+        outline:1px solid var(--theme-color)
+      }
+    }
+    textarea{
+      width:100%;
+      min-height:10rem;
+      resize:vertical;
+    }
+    button{
+      color:white;
+      padding:0.5rem 0;
+      font-size:1.25rem;
+      font-weight:700;
+      border-radius:0.5rem;
+      background-color:var(--theme-color);
+      opacity:0.75;
+      &:hover, &:focus{
+        opacity:1;
+      }
+    }
+    select{
+      border:none;
+      outline:none;
+      display:flex;
+    }
+    span.file-ext-warning{
+      font-size:0.75rem;
+      color:crimson;
+      align-self:center;
+    }
+  }
+}
