@@ -37,6 +37,4 @@ app.post('/upload', upload.single('image'), (req, res, next) => {
   res.json(file.filename)
 })
 
-app.listen(5000, () => {
-  console.log(`Listening at port 5000`)
-})
+app.listen(process.env.PORT || 5000, () => { console.log(`Listening at port ${process.env.PORT || 5000}`) })
