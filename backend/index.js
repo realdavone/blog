@@ -2,15 +2,17 @@ import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import multer from 'multer'
+import dotenv from 'dotenv'
 
 import postsRoutes from './routes/posts.js'
 import authRoutes from './routes/auth.js'
 import userRoutes from './routes/user.js'
 
+dotenv.config()
 const app = express()
 
 app.use(cookieParser())
-app.use(cors({ credentials: true, origin: ['http://127.0.0.1:5173', 'http://localhost:5173'] }))
+app.use(cors({ credentials: true, origin: ['http://127.0.0.1:5173', 'http://localhost:5173', process.env?.CLIENT_URL] }))
 app.use(express.json())
 
 app.use('/api/posts', postsRoutes)
