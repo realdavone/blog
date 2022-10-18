@@ -49,9 +49,9 @@ export const removePost = (req, res) => {
 }
 
 export const editPost = (req, res) => {
-  const q = 'UPDATE posts SET `title`=?,`content`=?,`category`=? WHERE `id`=? and `uid`=?'
+  const q = 'UPDATE posts SET `title`=?, `content`=?, `category`=?, `img`=? WHERE `id`=? and `uid`=?'
 
-  db.query(q, [req.body.title, req.body.content, req.body.category, req.params.id, 1], (err, data) => {
+  db.query(q, [req.body.title, req.body.content, req.body.category, req.body.img, req.params.id, 1], (err, data) => {
     if(err) return res.status(400).json({ success: false, message: err })
 
     res.status(200).json({ success: true, message: 'Post upravený' })

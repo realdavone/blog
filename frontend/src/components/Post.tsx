@@ -55,9 +55,11 @@ export const Post = () => {
           <button onClick={() => removePost()}>&times;</button>
         </div>
         }
+        {post.img && 
         <div className="img">
-          {post.img && <img src={`${import.meta.env['VITE_IMAGE_PATH']}${post.img}`}/>}
+          <img src={`${import.meta.env['VITE_IMAGE_PATH']}${post.img}`}/>
         </div>
+        }
         <div className="content">
           {post.content}
         </div>

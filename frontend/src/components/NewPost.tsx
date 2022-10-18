@@ -39,7 +39,7 @@ export const NewPost = () => {
     const formData = new FormData()
     formData.append('image', img)
 
-    const url = fetch('http://localhost:5000/upload', { method: 'POST', body: formData })
+    const url = fetch(import.meta.env['VITE_UPLOAD_BASE_URL'], { method: 'POST', body: formData })
     .then(res => res.json())
     .then(url => url)
     .catch(() => '')
@@ -51,8 +51,7 @@ export const NewPost = () => {
 
     const imgUrl = (img !== '' ? await uploadImage() : null)
 
-
-    fetch(`${import.meta.env['VITE_API_BASE_URL']}posts/new`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    fetch(`${import.meta.env['VITE_API_BASE_URL']}posts/new`, { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title: post.title, content: post.content, category: post.category, img: imgUrl })
     })
     .then(res => res.json())

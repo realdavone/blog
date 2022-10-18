@@ -15,7 +15,6 @@ const useFetch = <T>(endpoint: string, options?: any) => {
   useEffect(() => {
     setLoading(true)
     setError(null)
-    console.log('here')
 
     fetch(`${import.meta.env['VITE_API_BASE_URL']}${endpoint}`, { ...options, credentials: 'include' })
     .then(async (res) => {

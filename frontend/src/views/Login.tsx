@@ -18,11 +18,7 @@ export const Login = () => {
 
   const submitLogin = (e: React.FormEvent) => {
     e.preventDefault()
-    try {
-      login(user)      
-    } catch (error) {
-      console.log(error) 
-    }
+    login(user)      
   }
 
   return (
