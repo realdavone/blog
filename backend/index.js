@@ -12,7 +12,7 @@ dotenv.config()
 const app = express()
 
 app.use(cookieParser())
-app.use(cors({ credentials: true, origin: ['http://127.0.0.1:5173', 'http://localhost:5173', process.env?.CLIENT_URL] }))
+app.use(cors({ credentials: true, origin: [process.env.CLIENT_URL] }))
 app.use(express.json())
 
 app.use('/api/posts', postsRoutes)
