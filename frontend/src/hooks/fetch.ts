@@ -18,7 +18,6 @@ const useFetch = <T>(endpoint: string, options?: any) => {
 
     fetch(`${import.meta.env['VITE_API_BASE_URL']}${endpoint}`, { ...options, credentials: 'include' })
     .then(async (res) => {
-
       if(res.status < 200 || res.status > 299) {
         const response: ErrorMessage = await res.json()
         throw(response?.message)
@@ -31,7 +30,7 @@ const useFetch = <T>(endpoint: string, options?: any) => {
     })
     .catch(error => {
       setData(null)
-      setError(error || 'Niečo sa pokazilo')
+      setError(error.toString() || 'Niečo sa pokazilo')
     })
     .finally(() => setLoading(false))
   }, [endpoint])
