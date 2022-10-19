@@ -22,7 +22,7 @@ export const login = (req, res) => {
 
     let { password, ...user } = data[0]
 
-    res.cookie('access-token', token, { httpOnly: true }).status(200).json({ success: true, user })
+    res.cookie('access-token', token, { httpOnly: true, sameSite: 'none', secure: true }).status(200).json({ success: true, user })
   })
 }
 
@@ -44,5 +44,5 @@ export const register = async (req, res) => {
 }
 
 export const logout = (req, res) => {
-  res.clearCookie('access-token', { sameSite: 'none', secure: true }).status(200).json({ success: true, message: 'Úspešné odhlásenie' })
+  res.clearCookie('access-token', { sameSite: 'none', secure: true, httpOnly: true }).status(200).json({ success: true, message: 'Úspešné odhlásenie' })
 }
