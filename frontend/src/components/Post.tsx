@@ -30,7 +30,7 @@ export const Post = () => {
   const navigate = useNavigate()
 
   const removePost = (): void => {
-    fetch(`${import.meta.env['VITE_API_BASE_URL']}posts/${postId}`, { method: 'DELETE' }).then(res => res.json()).then(data => { data.success && navigate('/') })
+    fetch(`${import.meta.env['VITE_API_BASE_URL']}posts/${postId}`, { method: 'DELETE', credentials: 'include' }).then(res => res.json()).then(data => { data.success && navigate('/') })
   }
 
   return (
